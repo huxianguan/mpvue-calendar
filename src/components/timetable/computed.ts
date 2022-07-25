@@ -148,7 +148,8 @@ function multiRangeOption({selectDate = [], date}: any) {
 }
 
 function multiOption({selectDate, date}: any) {
-  return selectDate.includes(date) ? 'vc-day-selected' : undefined;
+  const curDate = selectDate.find((s: any) => s[0] === date);
+  return curDate ? `vc-day-selected ${curDate[1]}` : undefined;
 }
 
 function selectOption({date, selectDate}: any) {

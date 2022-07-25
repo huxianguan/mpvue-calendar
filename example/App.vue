@@ -110,7 +110,7 @@
 
       const getRandom = () => Math.floor(Math.random() * (28 - 1 + 1)) + 1
       const selectModeDate = ref(`${currentYear}-${currentMonth}-${getRandom()}`)
-      const multiModeDate = ref([`${currentYear}-${currentMonth}-${getRandom()}`, `${currentYear}-${currentMonth}-${getRandom()}`, `${currentYear}-${currentMonth}-${getRandom()}`])
+      const multiModeDate = ref([[`${currentYear}-${currentMonth}-${getRandom()}`,'color-1'], [`${currentYear}-${currentMonth}-${getRandom()}`, 'color-2'], [`${currentYear}-${currentMonth}-${getRandom()}`, 'color-3'], [`${currentYear}-${currentMonth}-${getRandom()}`, 'color-4']])
       const rangeModeDate = ref({start: `${currentYear}-${currentMonth}-10`, end: `${currentYear}-${currentMonth}-14`})
       const multiRangeModeDate = ref([{start: `${currentYear}-${currentMonth}-8`, end: `${currentYear}-${currentMonth}-12`}, {start: `${currentYear}-${currentMonth}-20`, end: `${currentYear}-${currentMonth}-23`}])
 
