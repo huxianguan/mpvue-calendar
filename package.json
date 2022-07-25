@@ -1,6 +1,6 @@
 {
   "name": "mpvue-calendar",
-  "version": "3.0.1",
+  "version": "1.0.0",
   "description": "vue calendar mpvue-calendar vue-calendar",
   "main": "dist/mpvue-calendar.umd.min.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hzy0913/mpvue-calendar.git"
+    "url": "git+https://github.com/huxianguan/mpvue-calendar.git"
   },
   "keywords": [
     "vue",
