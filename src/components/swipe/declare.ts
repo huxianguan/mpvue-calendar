@@ -28,4 +28,4 @@ export {
   SlideInterface,
   startType,
   deltaType,
-}
+};

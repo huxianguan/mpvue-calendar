@@ -21,4 +21,4 @@ interface CalendarInterface {
 
 export {
   CalendarInterface,
-}
+};

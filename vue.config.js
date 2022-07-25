@@ -1,4 +1,5 @@
-const path = require("path");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/mpvue-calendar/' : '/',
@@ -13,4 +14,4 @@ module.exports = {
   },
   productionSourceMap: false,
   lintOnSave: process.env.NODE_ENV !== 'production'
-}
+};
