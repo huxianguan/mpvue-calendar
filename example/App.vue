@@ -122,8 +122,6 @@
         '2022-7-2': 'color-4'
       })
 
-      console.log(markDate)
-
       const weekModeRef = ref()
       const begin = ref('2021-1-13')
       const end = ref('2025-2-13')

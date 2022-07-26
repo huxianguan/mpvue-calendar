@@ -200,7 +200,6 @@
 
       function markComputed(date: string) {
         const markDateObj = markDate.value;
-        console.log(markDateObj);
         if (markDateObj && Object.keys(markDateObj).indexOf(date) > -1) {
           return markDate.value[date];
         }
