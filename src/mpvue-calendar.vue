@@ -61,6 +61,7 @@
             :format="format"
             :lunar="lunar"
             :backgroundText="backgroundText"
+            :markDate="markDate"
             @onSelect="onSelect"
             @onMonthChange="monthChange"
           />
@@ -164,6 +165,9 @@
       disabled: {
         type: Object,
       },
+      markDate: {
+        type: Object,
+      },
     },
     components: {
       Tools,
@@ -174,7 +178,7 @@
     emits: ['onSelect', 'next', 'prev', 'selectMonth', 'selectYear', 'onMonthChange'],
     setup(props: CalendarInterface, { emit }: any) {
       const { tileContent, monFirst, monthRange, mode: tableMode, selectMode, selectDate, remarks,
-        weeks, language: propLanguage,
+        weeks, language: propLanguage, markDate
       } = toRefs(props);
       const timestamp = ref(+new Date()); // listener timestamp change to refresh timetable
       const [todayYear, todayMonth, todaytDay] = getToday(true);

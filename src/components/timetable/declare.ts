@@ -19,6 +19,7 @@ interface TimeTableInterface {
   selectMode: 'select' | 'multi' | 'range' | 'multiRange';
   selectDate?: string | string[] | {start?: string; end?: string} | {start?: string; end?: string}[];
   disabled: string[];
+  markDate: any;
 }
 
 interface SwipeInterface {

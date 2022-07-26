@@ -1,21 +1,21 @@
 {
-  "name": "mpvue-calendar",
-  "version": "1.0.0",
+  "name": "mpvue-calendar-xg",
+  "version": "1.0.1",
   "description": "vue calendar mpvue-calendar vue-calendar",
   "main": "dist/mpvue-calendar.umd.min.js",
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "npm run build:calendar && npm run build:lunar && npm run remove",
-    "build:calendar": "vue-cli-service build --target lib --name mpvue-calendar './src/mpvue-calendar.vue'",
-    "build:lunar": "vue-cli-service build --target lib --name lunar --dest lib './src/lunar.ts'",
-    "remove": "cp ./lib/lunar.umd.min.js ./dist/lunar.js",
-    "demo": "vue-cli-service build --dest demo './example/main.js'",
+    "build:calendar": "vue-cli-service build --target lib --name mpvue-calendar src/mpvue-calendar.vue",
+    "build:lunar": "vue-cli-service build --target lib --name lunar --dest lib src/lunar.ts",
+    "remove": "copy lib/lunar.umd.min.js dist/lunar.js",
+    "demo": "vue-cli-service build --dest demo example/main.js",
     "lint": "vue-cli-service lint",
     "publish": "npm publish --registry https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huxianguan/mpvue-calendar.git"
+    "url": "git+https://github.com/xianguan/mpvue-calendar.git"
   },
   "keywords": [
     "vue",

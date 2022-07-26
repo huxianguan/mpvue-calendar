@@ -148,11 +148,18 @@ function multiRangeOption({selectDate = [], date}: any) {
 }
 
 function multiOption({selectDate, date}: any) {
-  const curDate = selectDate.find((s: any) => s[0] === date);
-  return curDate ? `vc-day-selected ${curDate[1]}` : undefined;
+  if (selectDate instanceof Array) {
+    const curDate = selectDate.find((s: any) => s[0] === date);
+    return curDate ? `vc-day-selected ${curDate[1]}` : undefined;
+  }
+  return selectDate === date ? 'vc-day-selected' : undefined;
 }
 
 function selectOption({date, selectDate}: any) {
+  if (selectDate instanceof Array) {
+    const curDate = selectDate.find((s: any) => s[0] === date);
+    return curDate ? `vc-day-selected ${curDate[1]}` : undefined;
+  }
   return selectDate === date ? 'vc-day-selected' : undefined;
 }
 

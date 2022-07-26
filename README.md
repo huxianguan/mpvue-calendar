@@ -19,6 +19,8 @@
 
 > A feature-rich calendar component, support multiple modes and gesture sliding. For vue 3.0+
 
+> 说明：本项目基于mpvue-calendar，以下为mpvue-calendar的参数配置；此项目增加展示时颜色配置；
+
 <p align="center">
 <img width="940" src="http://img.binlive.cn/687474703a2f2f696d672e62696e6c6976652e636e2f75706c6f61642f3136313339373433383732383363616c656e6461722d707265766965772e706e67.png" alt="mpvue-calendar preview">
 </p>
@@ -31,7 +33,7 @@
 mpvue-calendar only support **vue@3.0+**
 
 ```
-npm i mpvue-calendar -S
+npm i mpvue-calendar-xg -S
 ```
 ## 🔨 Usage
 

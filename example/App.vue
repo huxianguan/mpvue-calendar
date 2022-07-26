@@ -16,9 +16,11 @@
         @prev="prev"
         @onMonthChange="onMonthChange"
         @onSelect="onSelect"
+        :mark-date="markDate"
       />
       <!--multi mode-->
       <Calendar
+        :mark-date="markDate"
         selectMode="multi"
         class-name="multi-mode"
         language="en"
@@ -113,6 +115,14 @@
       const multiModeDate = ref([[`${currentYear}-${currentMonth}-${getRandom()}`,'color-1'], [`${currentYear}-${currentMonth}-${getRandom()}`, 'color-2'], [`${currentYear}-${currentMonth}-${getRandom()}`, 'color-3'], [`${currentYear}-${currentMonth}-${getRandom()}`, 'color-4']])
       const rangeModeDate = ref({start: `${currentYear}-${currentMonth}-10`, end: `${currentYear}-${currentMonth}-14`})
       const multiRangeModeDate = ref([{start: `${currentYear}-${currentMonth}-8`, end: `${currentYear}-${currentMonth}-12`}, {start: `${currentYear}-${currentMonth}-20`, end: `${currentYear}-${currentMonth}-23`}])
+      const markDate =  ref({
+        '2022-7-26': 'color-1',
+        '2022-7-23': 'color-2',
+        '2022-7-12': 'color-3',
+        '2022-7-2': 'color-4'
+      })
+
+      console.log(markDate)
 
       const weekModeRef = ref()
       const begin = ref('2021-1-13')
@@ -209,6 +219,7 @@
         weeks: ['一', '二', '三', '四', '五', '六', '日'],
         end,
         selectModeDate,
+        markDate,
         onMonthChange,
         next,
         prev,

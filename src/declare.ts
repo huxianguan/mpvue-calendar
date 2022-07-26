@@ -16,6 +16,7 @@ interface CalendarInterface {
   selectMode: 'select' | 'multi' | 'range' | 'multiRange';
   lunar: any;
   selectDate: any;
+  markDate: any;
   format: (year: string, month: string) => string[];
 }
 

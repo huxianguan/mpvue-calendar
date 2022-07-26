@@ -36,13 +36,15 @@
                     'vc-calendar-next-month-day': child.nextMonthDay,
                     'vc-calendar-row-first': k2 === 0,
                     'vc-calendar-row-last': k2 === 6,
-                    'month-last-date': child.lastDay, 'month-first-date': 1 === child.day,
+                    'month-last-date': child.lastDay,
+                     'month-first-date': 1 === child.day,
                     'mc-last-month': child.lastMonth,
                     'mc-next-month': child.nextMonth
                   },
                   child.className,
                   child.selectedClassName,
-                  child.rangeClassName
+                  child.rangeClassName,
+                  child.markClassName
                 ]"
                 @click="select(k1, k2, child, $event, index)"
               >
@@ -163,12 +165,15 @@
       selectDate: {
         type: [String, Array, Object],
       },
+      markDate: {
+        type: Object,
+      }
     },
     emits: ['onSelect', 'onMonthChange'],
     setup(props: TimeTableInterface, { emit }: any) {
       const { year, month, selectMode, tableMode: propsTableMode, monFirst, begin: propsBegin,
         end: propsEnd, completion: propsCompletion, day, tileContent, disabled, remarks, holidays,
-        selectDate,
+        selectDate, markDate
       } = toRefs(props);
 
       const tableMode = ref(propsTableMode);
@@ -191,6 +196,15 @@
           case 'select':
             return selectOption({selectDate: selectDate?.value, date});
         }
+      }
+
+      function markComputed(date: string) {
+        const markDateObj = markDate.value;
+        console.log(markDateObj);
+        if (markDateObj && Object.keys(markDateObj).indexOf(date) > -1) {
+          return markDate.value[date];
+        }
+        return undefined;
       }
 
       function select(k1: any, k2: any, child: any) {
@@ -257,7 +271,8 @@
       function renderOption({year, month, i, playload}: any) { // eslint-disable-line
         const date = `${year}-${month}-${i}`;
         const modeOptions = {
-          selectedClassName: selectComputed(date)
+          selectedClassName: selectComputed(date),
+          markClassName: markComputed(date)
         };
         const options = {
           day: i,
@@ -268,7 +283,6 @@
           ...setDisabledDate({year, month, i, date}),
           ...getToday(date),
         };
-
         return Object.assign(options, modeOptions);
       }
 
