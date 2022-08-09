@@ -408,7 +408,7 @@
         refreshRender();
       });
 
-      watch(() => [props.monFirst, props.completion, props.year, props.month, props.day], () => {
+      watch(() => [props.markDate, props.monFirst, props.completion, props.year, props.month, props.day], () => {
         refreshRender();
       });
 
